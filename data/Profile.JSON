@@ -1,0 +1,80 @@
+{
+    "personal_info": {
+        "name": "Badal Mandal",
+        "email": "kumarkingbadal@gmail.com",
+        "phone": "+91 9871036904",
+        "location": "Himachal Pradesh, India",
+        "linkedin": "https://www.linkedin.com/in/badal-mandal-1a83a9262/",
+        "github": "https://github.com/BadalMandal"
+    },
+    "education": [
+        {
+            "degree": "B.Tech in Computer Science and Engineering",
+            "institution": "IIT Mandi",
+            "duration": "Aug 2022 – Present (Expected June 2026)",
+            "cgpa": "6.89",
+            "courses": [
+                "OOPs",
+                "SQL",
+                "Data Structures and Algorithms",
+                "Mathematical Foundations of Computer Science",
+                "Linear Algebra",
+                "Information and Database Systems",
+                "Data Science (Python, Probability, Machine Learning)"
+            ]
+        },
+        {
+            "degree": "12th Grade",
+            "institution": "Government Senior Secondary School (Boys), Rewari, Haryana",
+            "duration": "Apr 2020 – Mar 2022",
+            "percentage": "87%"
+        },
+        {
+            "degree": "10th Grade",
+            "institution": "Government Model Sanskriti Senior Secondary School, Faridabad, Haryana",
+            "duration": "Apr 2019 – Mar 2020",
+            "percentage": "89.6%"
+        }
+    ],
+    "skills": {
+        "description": "Badal has developed a robust technical foundation with a focus on programming, data analysis, and system design. His expertise spans multiple domains, including backend development, data engineering, and embedded systems. He excels in building scalable and optimized solutions for complex problems.",
+        "programming_languages": ["C", "C++", "Python", "SQL"],
+        "libraries_frameworks": ["Pandas", "NumPy", "Matplotlib", "Git"],
+        "operating_systems": ["Linux", "Windows"]
+    },
+    "projects": [
+        {
+            "name": "Speech Recognition Model using GMM",
+            "description": "Developed a sophisticated speech recognition model using Gaussian Mixture Models (GMM). Focused on extracting high-quality acoustic features to improve recognition accuracy. Performed extensive validation and testing on diverse datasets to ensure the model's robustness and real-world applicability. This project highlights Badal's expertise in machine learning and signal processing."
+        },
+        {
+            "name": "Maze Solver Robot",
+            "description": "Built an intelligent maze-solving robot using Arduino Uno, ultrasound sensors, and motor drives. Designed and implemented a wall-following algorithm for efficient navigation. Conducted iterative design improvements, achieving a 15% increase in load-bearing capacity. The project demonstrates Badal's ability to integrate hardware with algorithmic precision for real-world applications."
+        },
+        {
+            "name": "Responsive Portfolio Website",
+            "description": "Created a dynamic and responsive portfolio website using HTML, CSS, and JavaScript. Designed an intuitive and user-friendly interface, ensuring cross-device compatibility. Integrated interactive animations and smooth scrolling for an enhanced user experience. The portfolio showcases Badal's projects, skills, and achievements effectively."
+        }
+    ],
+    "portfolio": {
+        "sections": [
+            "About Me",
+            "Skills",
+            "Projects",
+            "Certifications",
+            "Contact"
+        ],
+        "features": [
+            "Responsive Design",
+            "Interactive Animations",
+            "Smooth Scrolling",
+            "Contact Form Integration"
+        ]
+    },
+    "certifications": [
+        "Machine Learning Expertise (Infosys)"
+    ],
+    "responsibilities": [
+        "Core Team Member, National Sports Organisation (NSO) at IIT Mandi"
+    ]
+}

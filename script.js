@@ -52,7 +52,6 @@ const typed = new Typed('.multiple-text',{
     loop:true
 });
 
-// Chatbot logic
 const chatInput = document.getElementById('chat-input');
 const chatSend = document.getElementById('chat-send');
 const chatDisplay = document.getElementById('chat-display');
@@ -60,15 +59,32 @@ const chatDisplay = document.getElementById('chat-display');
 const GROQ_API_KEY = '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';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
+let profileData = null;
+
+// Load Profile Data from JSON
+async function loadProfile() {
+    try {
+        const response = await fetch('/data/profile.json');
+        if (!response.ok) {
+            throw new Error('Failed to load profile data');
+        }
+        profileData = await response.json();
+        console.log('Profile Data Loaded:', profileData);
+    } catch (error) {
+        console.error('Error loading profile data:', error);
+    }
+}
+
+// Call the function to load the profile
+loadProfile();
+
 chatSend.addEventListener('click', async () => {
     const userMessage = chatInput.value.trim();
     if (userMessage) {
-        // Display user message
         chatDisplay.innerHTML += `<div class="user-message">${userMessage}</div>`;
         chatInput.value = '';
 
         try {
-            // Send user message to Groq API
             const response = await fetch(GROQ_API_URL, {
                 method: 'POST',
                 headers: {
@@ -78,18 +94,19 @@ chatSend.addEventListener('click', async () => {
                 body: JSON.stringify({
                     model: "llama-3.3-70b-versatile",
                     messages: [
-                        { role: 'system', content: "You are a chatbot assistant trained to provide information about Badal's portfolio, including skills, projects, and certifications." },
+                        {
+                            role: 'system',
+                            content: `You are an AI chatbot designed to answer questions about Badal's resume and portfolio. Use the following data strictly:\n${JSON.stringify(profileData)}`
+                        },
                         { role: 'user', content: userMessage }
                     ]
                 })
             });
 
-            // Check for HTTP errors
             if (!response.ok) {
                 throw new Error(`API Error: ${response.status} - ${response.statusText}`);
             }
 
-            // Parse API response
             const data = await response.json();
             if (data?.choices?.[0]?.message?.content) {
                 chatDisplay.innerHTML += `<div class="bot-message">${data.choices[0].message.content}</div>`;
